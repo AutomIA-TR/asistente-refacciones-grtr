@@ -1,0 +1,461 @@
+{
+ "asistente": "Asistente de refacciones GRTR",
+ "version": "fase 1 (reglas)",
+ "intenciones": [
+  {
+   "nombre": "cotizar",
+   "prioridad": 1,
+   "necesidad": "Armar una cotización preliminar de una o varias piezas sin esperar a un asesor",
+   "palabras": [
+    "cotiza",
+    "cotizame",
+    "cotizala",
+    "cotizacion",
+    "presupuesto",
+    "agrega",
+    "agregala",
+    "anade",
+    "carrito",
+    "llevo",
+    "total"
+   ],
+   "frases": [
+    "quiero comprar",
+    "me la llevo",
+    "me lo llevo"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false
+  },
+  {
+   "nombre": "envios",
+   "prioridad": 2,
+   "necesidad": "Saber si le pueden enviar la pieza y en cuánto tiempo",
+   "palabras": [
+    "envio",
+    "paqueteria",
+    "flete",
+    "domicilio",
+    "mandan",
+    "entregan"
+   ],
+   "frases": [
+    "cuanto tarda",
+    "cuando llega"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": true,
+   "respuesta": "Enviamos a todo México por paquetería. El costo y el tiempo de entrega se calculan con tu código postal al confirmar el pedido; en el área metropolitana de Monterrey también hay entrega local."
+  },
+  {
+   "nombre": "garantia",
+   "prioridad": 2,
+   "necesidad": "Conocer la garantía antes de comprar, sobre todo en piezas reacondicionadas",
+   "palabras": [
+    "garantia",
+    "devolucion",
+    "defecto",
+    "defectuosa",
+    "reclamo"
+   ],
+   "frases": [],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": true,
+   "respuesta": "Las piezas nuevas tienen garantía de 6 meses y las reacondicionadas OEM de 3 meses contra defectos de fabricación, presentando la nota o factura. La garantía no cubre daños por instalación incorrecta."
+  },
+  {
+   "nombre": "formas_pago",
+   "prioridad": 2,
+   "necesidad": "Saber cómo pagar y si puede facturar",
+   "palabras": [
+    "pago",
+    "tarjeta",
+    "transferencia",
+    "efectivo",
+    "factura"
+   ],
+   "frases": [
+    "meses sin intereses",
+    "deposito bancario"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": true,
+   "respuesta": "Aceptamos transferencia, depósito, tarjeta de crédito o débito y efectivo en mostrador. Todas las compras se pueden facturar: al confirmar el pedido te pedimos tus datos fiscales."
+  },
+  {
+   "nombre": "horario_contacto",
+   "prioridad": 2,
+   "necesidad": "Hablar con una persona o saber cuándo y dónde lo atienden",
+   "palabras": [
+    "horario",
+    "abren",
+    "cierran",
+    "ubicacion",
+    "sucursal",
+    "telefono",
+    "whatsapp",
+    "asesor",
+    "humano",
+    "persona",
+    "vendedor",
+    "contacto",
+    "llamar"
+   ],
+   "frases": [
+    "a que hora",
+    "donde estan"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": true,
+   "respuesta": "Te atiende un asesor de lunes a viernes de 9:00 a 18:00 y sábados de 9:00 a 14:00. Puedes escribir por WhatsApp o llamar al 81 0000 0000 (número de ejemplo); comparte la referencia o tu cotización para que te atiendan más rápido."
+  },
+  {
+   "nombre": "compatibilidad",
+   "prioridad": 3,
+   "necesidad": "Saber si una pieza le queda a su vehículo",
+   "palabras": [
+    "queda",
+    "sirve",
+    "servira",
+    "compatible",
+    "aplica",
+    "funciona",
+    "jala"
+   ],
+   "frases": [],
+   "dispara_con": [],
+   "requiere": [
+    "vehiculo"
+   ],
+   "ejemplo": false
+  },
+  {
+   "nombre": "precio",
+   "prioridad": 4,
+   "necesidad": "Conocer el precio de una pieza o de un tipo de pieza",
+   "palabras": [
+    "precio",
+    "cuesta",
+    "cuanto",
+    "vale",
+    "costo"
+   ],
+   "frases": [],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false
+  },
+  {
+   "nombre": "consultar_referencia",
+   "prioridad": 5,
+   "necesidad": "Ver qué es una pieza de la que ya tiene el código",
+   "palabras": [
+    "referencia",
+    "codigo",
+    "numero"
+   ],
+   "frases": [],
+   "dispara_con": [
+    "referencia"
+   ],
+   "requiere": [],
+   "ejemplo": false
+  },
+  {
+   "nombre": "buscar_pieza",
+   "prioridad": 6,
+   "necesidad": "Encontrar una pieza por tipo y por vehículo",
+   "palabras": [
+    "busco",
+    "necesito",
+    "ocupo",
+    "tienen",
+    "hay",
+    "manejan"
+   ],
+   "frases": [],
+   "dispara_con": [
+    "familia",
+    "generico",
+    "vehiculo"
+   ],
+   "requiere": [],
+   "ejemplo": false
+  },
+  {
+   "nombre": "catalogo",
+   "prioridad": 7,
+   "necesidad": "Saber qué tipos de pieza vende la empresa",
+   "palabras": [
+    "catalogo",
+    "familias",
+    "lineas",
+    "productos"
+   ],
+   "frases": [
+    "que venden",
+    "que manejan",
+    "que tienen",
+    "que piezas",
+    "que tipo de piezas"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false
+  },
+  {
+   "nombre": "ayuda",
+   "prioridad": 8,
+   "necesidad": "Saber cómo usar el asistente",
+   "palabras": [
+    "ayuda",
+    "ayudame",
+    "instrucciones",
+    "opciones"
+   ],
+   "frases": [
+    "que puedes hacer",
+    "como funciona",
+    "como te uso",
+    "que sabes hacer"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false,
+   "respuesta": "Escríbeme como le escribirías a un vendedor. Por ejemplo:\n  • «busco bomba de gasolina para Tsuru 2005»\n  • «¿cuánto cuesta la BG-2833?»\n  • «¿la SO-4474 le queda a un Aveo 2014?»\n  • «cotízame 2 BE-1126 y 1 CA-1501»\n  • «¿hacen envíos?», «¿qué garantía tienen?», «quiero hablar con un asesor»"
+  },
+  {
+   "nombre": "saludo",
+   "prioridad": 9,
+   "necesidad": "Iniciar la conversación y saber qué puede pedir",
+   "palabras": [
+    "hola",
+    "buenas",
+    "buenos",
+    "saludos",
+    "buen"
+   ],
+   "frases": [
+    "que tal"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false,
+   "respuesta": "¡Hola! Soy el asistente de refacciones de GRTR. Puedo buscar piezas por tipo y vehículo, darte precios, revisar si una pieza le queda a tu auto y armarte una cotización preliminar. También te informo de envíos, garantía y formas de pago. ¿Qué necesitas?"
+  },
+  {
+   "nombre": "despedida",
+   "prioridad": 9,
+   "necesidad": "Cerrar la conversación",
+   "palabras": [
+    "gracias",
+    "adios",
+    "bye",
+    "luego",
+    "chao"
+   ],
+   "frases": [
+    "nos vemos",
+    "eso es todo"
+   ],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false,
+   "respuesta": "¡Gracias por consultarnos! Si armaste una cotización, compártela con un asesor para confirmar existencia, envío y factura."
+  },
+  {
+   "nombre": "fuera_de_alcance",
+   "prioridad": 99,
+   "necesidad": "Recibir una salida clara cuando pide algo que el asistente no cubre",
+   "palabras": [],
+   "frases": [],
+   "dispara_con": [],
+   "requiere": [],
+   "ejemplo": false,
+   "respuesta": "No tengo información sobre eso. Manejo refacciones de motor, inyección, encendido y dirección: escribe «¿qué venden?» para ver las familias o «ayuda» para ver ejemplos. Si lo prefieres, pide hablar con un asesor."
+  }
+ ],
+ "familias": {
+  "SO": [
+   "sensor de oxigeno",
+   "sonda lambda"
+  ],
+  "SC": [
+   "sensor de ciguenal",
+   "sensor ckp"
+  ],
+  "SL": [
+   "sensor de arbol de levas",
+   "sensor cmp"
+  ],
+  "SM": [
+   "sensor map"
+  ],
+  "BG": [
+   "bomba de gasolina",
+   "bomba de combustible",
+   "bomba de tanque"
+  ],
+  "BA": [
+   "bomba de alta presion"
+  ],
+  "BD": [
+   "bomba de direccion"
+  ],
+  "CA": [
+   "cuerpo de aceleracion",
+   "cuerpo de admision"
+  ],
+  "IN": [
+   "inyector"
+  ],
+  "BE": [
+   "bobina"
+  ],
+  "VA": [
+   "valvula"
+  ],
+  "EA": [
+   "enfriador de aceite",
+   "enfriador"
+  ],
+  "TA": [
+   "toma de agua"
+  ],
+  "DA": [
+   "deposito de agua",
+   "deposito de anticongelante"
+  ],
+  "CR": [
+   "cremallera",
+   "caja de direccion"
+  ],
+  "MA": [
+   "marcha",
+   "motor de arranque"
+  ]
+ },
+ "nombres": {
+  "SO": "sensores de oxígeno",
+  "SC": "sensores de cigüeñal",
+  "SL": "sensores de árbol de levas",
+  "SM": "sensores MAP",
+  "BG": "bombas de gasolina",
+  "BA": "bombas de alta presión",
+  "BD": "bombas de dirección",
+  "CA": "cuerpos de aceleración",
+  "IN": "inyectores",
+  "BE": "bobinas de encendido",
+  "VA": "válvulas",
+  "EA": "enfriadores de aceite",
+  "TA": "tomas de agua",
+  "DA": "depósitos de agua",
+  "CR": "cremalleras",
+  "MA": "marchas"
+ },
+ "genericos": {
+  "bomba": [
+   "BG",
+   "BA",
+   "BD"
+  ],
+  "sensor": [
+   "SO",
+   "SC",
+   "SL",
+   "SM"
+  ]
+ },
+ "vehiculos": {
+  "Nissan|Tsuru": [
+   "tsuru"
+  ],
+  "Nissan|Sentra": [
+   "sentra"
+  ],
+  "Nissan|Versa": [
+   "versa"
+  ],
+  "Nissan|March": [
+   "march"
+  ],
+  "Nissan|Tiida": [
+   "tiida"
+  ],
+  "Nissan|NP300": [
+   "np300",
+   "np-300"
+  ],
+  "Chevrolet|Aveo": [
+   "aveo"
+  ],
+  "Chevrolet|Spark": [
+   "spark"
+  ],
+  "Chevrolet|Chevy": [
+   "chevy"
+  ],
+  "Chevrolet|Silverado": [
+   "silverado"
+  ],
+  "Chevrolet|Cruze": [
+   "cruze"
+  ],
+  "Volkswagen|Jetta": [
+   "jetta"
+  ],
+  "Volkswagen|Vento": [
+   "vento"
+  ],
+  "Volkswagen|Pointer": [
+   "pointer"
+  ],
+  "Volkswagen|Sedán": [
+   "sedan",
+   "vocho",
+   "bocho"
+  ],
+  "Ford|Fiesta": [
+   "fiesta"
+  ],
+  "Ford|Focus": [
+   "focus"
+  ],
+  "Ford|F-150": [
+   "f150",
+   "f-150",
+   "lobo"
+  ],
+  "Ford|Ranger": [
+   "ranger"
+  ],
+  "Honda|Civic": [
+   "civic"
+  ],
+  "Honda|Accord": [
+   "accord"
+  ],
+  "Honda|CR-V": [
+   "crv",
+   "cr-v"
+  ],
+  "Toyota|Corolla": [
+   "corolla"
+  ],
+  "Toyota|Hilux": [
+   "hilux"
+  ],
+  "Toyota|Yaris": [
+   "yaris"
+  ],
+  "Dodge|Attitude": [
+   "attitude"
+  ]
+ },
+ "nota_cotizacion": "Cotización preliminar con precios de lista. IVA, existencia y envío se confirman con un asesor."
+}

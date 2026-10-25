@@ -1,0 +1,66 @@
+{
+ "funcionales": [
+  {"id": 1, "titulo": "Taller mecánico: bomba de gasolina para un Tsuru", "turnos": [
+   {"usuario": "hola", "intencion": "saludo"},
+   {"usuario": "busco bomba de gasolina para un tsuru 2005", "intencion": "buscar_pieza", "contiene": "BG-2833"},
+   {"usuario": "¿cuánto cuesta?", "intencion": "precio", "contiene": "$1,830.00"},
+   {"usuario": "cotízame 2", "intencion": "cotizar", "contiene": "Total estimado: $3,660.00"},
+   {"usuario": "gracias", "intencion": "despedida"}]},
+  {"id": 2, "titulo": "Cliente nuevo: qué venden y bobinas para un Jetta", "turnos": [
+   {"usuario": "buenas tardes, ¿qué venden?", "intencion": "catalogo", "contiene": "bobinas de encendido (22)"},
+   {"usuario": "¿venden llantas?", "intencion": "fuera_de_alcance"},
+   {"usuario": "¿manejan bobinas?", "intencion": "buscar_pieza", "contiene": "22 referencias"},
+   {"usuario": "bobina para jetta 2005", "intencion": "buscar_pieza", "contiene": "BE-1126"},
+   {"usuario": "¿qué puedes hacer?", "intencion": "ayuda"}]},
+  {"id": 3, "titulo": "Cliente con el código: consulta, compatibilidad y cotización", "turnos": [
+   {"usuario": "¿tienen la SO-4474?", "intencion": "consultar_referencia", "contiene": "Chevrolet Aveo 2013-2017"},
+   {"usuario": "¿le queda a un Aveo 2014?", "intencion": "compatibilidad", "contiene": "Sí: según el catálogo"},
+   {"usuario": "agrégala a mi cotización", "intencion": "cotizar", "contiene": "1 × SO-4474"},
+   {"usuario": "¿aceptan tarjeta?", "intencion": "formas_pago"}]},
+  {"id": 4, "titulo": "Pieza que no le queda: búsqueda para un Civic", "turnos": [
+   {"usuario": "¿la BG-3164 le sirve a mi Civic 2015?", "intencion": "compatibilidad", "contiene": "no aparece"},
+   {"usuario": "busco bomba de gasolina para civic 2015", "intencion": "buscar_pieza", "contiene": "2 opciones"},
+   {"usuario": "precio de la BG-8206", "intencion": "precio", "contiene": "$1,200.00"},
+   {"usuario": "¿qué garantía tiene?", "intencion": "garantia"}]},
+  {"id": 5, "titulo": "Cliente foráneo: envío, tiempo y factura", "turnos": [
+   {"usuario": "¿hacen envíos a Saltillo?", "intencion": "envios"},
+   {"usuario": "¿cuánto tarda en llegar?", "intencion": "envios"},
+   {"usuario": "¿dan factura?", "intencion": "formas_pago"},
+   {"usuario": "¿cómo puedo pagar?", "intencion": "formas_pago"},
+   {"usuario": "adiós", "intencion": "despedida"}]},
+  {"id": 6, "titulo": "Dudas de garantía y contacto con un asesor", "turnos": [
+   {"usuario": "¿qué garantía tienen las piezas reacondicionadas?", "intencion": "garantia"},
+   {"usuario": "quiero hablar con un asesor", "intencion": "horario_contacto"},
+   {"usuario": "¿a qué hora abren el sábado?", "intencion": "horario_contacto"},
+   {"usuario": "gracias, eso es todo", "intencion": "despedida"}]},
+  {"id": 7, "titulo": "Cotización de varias piezas en un mensaje", "turnos": [
+   {"usuario": "cotízame 2 BE-1126 y 1 CA-1501", "intencion": "cotizar", "contiene": "Total estimado: $3,870.00"},
+   {"usuario": "agrega 4 SO-4728", "intencion": "cotizar", "contiene": "Total estimado: $5,390.00"},
+   {"usuario": "¿cuánto es el total?", "intencion": "cotizar", "contiene": "Total estimado: $5,390.00"},
+   {"usuario": "borra la cotización", "intencion": "cotizar", "contiene": "borré"}]},
+  {"id": 8, "titulo": "Precio por tipo de pieza y por vehículo", "turnos": [
+   {"usuario": "¿cuánto cuestan las cremalleras?", "intencion": "precio", "contiene": "Cremalleras: de $"},
+   {"usuario": "¿cuánto cuesta un cuerpo de aceleración para sentra 2016?", "intencion": "precio", "contiene": "CA-1501"},
+   {"usuario": "cotízalo", "intencion": "cotizar", "contiene": "1 × CA-1501"},
+   {"usuario": "¿hacen envíos?", "intencion": "envios"}]},
+  {"id": 9, "titulo": "Código equivocado y pieza sin precio publicado", "turnos": [
+   {"usuario": "precio de la BG-9999", "intencion": "precio", "contiene": "No encontré la referencia BG-9999"},
+   {"usuario": "¿tienen la SO-1616?", "intencion": "consultar_referencia", "contiene": "precio por confirmar"},
+   {"usuario": "cotízala", "intencion": "cotizar", "contiene": "no tiene precio publicado"},
+   {"usuario": "quiero hablar con un asesor", "intencion": "horario_contacto"}]},
+  {"id": 10, "titulo": "Búsqueda genérica que se precisa: sensor para un Corolla", "turnos": [
+   {"usuario": "necesito un sensor", "intencion": "buscar_pieza", "contiene": "¿Cuál buscas"},
+   {"usuario": "sensor de oxígeno para corolla 2014", "intencion": "buscar_pieza", "contiene": "SO-4728"},
+   {"usuario": "¿cuánto cuesta?", "intencion": "precio", "contiene": "$380.00"},
+   {"usuario": "gracias, bye", "intencion": "despedida"}]}
+ ],
+ "limites": [
+  {"id": "L1", "titulo": "Faltas de ortografía", "limitacion": "Las reglas comparan palabras exactas: con faltas de ortografía no reconoce la pieza ni el vehículo", "turnos": [
+   {"usuario": "bomva de gazolina para tzuru", "intencion": "fuera_de_alcance"}]},
+  {"id": "L2", "titulo": "Dos preguntas en un mensaje", "limitacion": "Responde una sola intención por mensaje: atiende el envío e ignora el precio", "turnos": [
+   {"usuario": "¿cuánto cuesta la BG-2833 y hacen envíos a Monterrey?", "intencion": "envios"}]},
+  {"id": "L3", "titulo": "Pregunta que depende del turno anterior", "limitacion": "No recuerda la pieza buscada: al cambiar de vehículo vuelve a preguntar qué pieza", "turnos": [
+   {"usuario": "busco bobinas para jetta 2005", "intencion": "buscar_pieza", "contiene": "BE-1126"},
+   {"usuario": "¿y para un Aveo 2014?", "intencion": "buscar_pieza", "contiene": "¿Qué pieza buscas"}]}
+ ]
+}
