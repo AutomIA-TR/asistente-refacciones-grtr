@@ -1,0 +1,28 @@
+{
+ "descripcion": "Frases de límite para comparar las reglas con el clasificador: faltas de ortografía, lenguaje coloquial, choques de palabras clave, piezas fuera del catálogo y los límites L2 y L3 del Avance 1. 'aceptables' lista las intenciones correctas.",
+ "frases": [
+  {"id": "T1", "tipo": "ortografía", "texto": "bomva de gazolina para tzuru", "aceptables": ["buscar_pieza"]},
+  {"id": "T2", "tipo": "ortografía", "texto": "nesesito una bovina para jeta 2005", "aceptables": ["buscar_pieza"]},
+  {"id": "T3", "tipo": "ortografía", "texto": "cuanto questa la BE-1126", "aceptables": ["precio"]},
+  {"id": "T4", "tipo": "ortografía", "texto": "asen envios a saltiyo", "aceptables": ["envios"]},
+  {"id": "T5", "tipo": "ortografía", "texto": "tienen garantia las rekondicionadas", "aceptables": ["garantia"]},
+  {"id": "T6", "tipo": "ortografía", "texto": "kiero ablar con un asesor", "aceptables": ["horario_contacto"]},
+  {"id": "C1", "tipo": "coloquial", "texto": "oiga joven, ¿no tendrá una marcha para la lobo?", "aceptables": ["buscar_pieza"]},
+  {"id": "C2", "tipo": "coloquial", "texto": "¿y como en cuánto me sale?", "aceptables": ["precio"]},
+  {"id": "C3", "tipo": "coloquial", "texto": "a ver, ponme dos de esas", "aceptables": ["cotizar"]},
+  {"id": "C4", "tipo": "coloquial", "texto": "¿me la mandan hasta Monclova?", "aceptables": ["envios"]},
+  {"id": "C5", "tipo": "coloquial", "texto": "¿y si me sale chafa?", "aceptables": ["garantia"]},
+  {"id": "C6", "tipo": "coloquial", "texto": "¿jala con tarjeta?", "aceptables": ["formas_pago"]},
+  {"id": "K1", "tipo": "choque", "texto": "busco bomba de dirección para sentra", "aceptables": ["buscar_pieza"]},
+  {"id": "K2", "tipo": "choque", "texto": "¿me das la dirección para ir a recoger?", "aceptables": ["horario_contacto"]},
+  {"id": "K3", "tipo": "choque", "texto": "necesito un depósito de agua para corolla", "aceptables": ["buscar_pieza"]},
+  {"id": "K4", "tipo": "choque", "texto": "¿puedo hacer un depósito en su cuenta?", "aceptables": ["formas_pago"]},
+  {"id": "K5", "tipo": "choque", "texto": "marcha para march 2015", "aceptables": ["buscar_pieza"]},
+  {"id": "K6", "tipo": "choque", "texto": "¿tienen inyectores para march?", "aceptables": ["buscar_pieza"]},
+  {"id": "F1", "tipo": "fuera del catálogo", "texto": "¿manejan clutch?", "aceptables": ["fuera_de_alcance"]},
+  {"id": "F2", "tipo": "fuera del catálogo", "texto": "busco balatas para tsuru 2005", "aceptables": ["fuera_de_alcance"]},
+  {"id": "F3", "tipo": "fuera del catálogo", "texto": "¿cuánto cuestan los amortiguadores?", "aceptables": ["fuera_de_alcance"]},
+  {"id": "L2", "tipo": "dos intenciones (Avance 1)", "texto": "¿cuánto cuesta la BG-2833 y hacen envíos a Monterrey?", "aceptables": ["precio", "envios"]},
+  {"id": "L3", "tipo": "depende del turno anterior (Avance 1)", "texto": "¿y para un Aveo 2014?", "aceptables": ["buscar_pieza", "compatibilidad"]}
+ ]
+}
